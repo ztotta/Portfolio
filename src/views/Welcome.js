@@ -11,7 +11,7 @@ class Welcome extends Component {
 				<p className='p welcome center'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio iusto accusantium earum veniam, cupiditate harum. Molestiae perspiciatis eveniet nam, necessitatibus officiis error assumenda provident totam magni voluptatibus pariatur nemo.</p>
 				<div className='navbar welcome center'>
 					<Link className='nav'>home</Link>
-					<Link className='nav'>projects</Link>
+					<Link to="loops-with-friends" className='nav'>projects</Link>
 					<Link className='nav'>skills</Link>
 					<Link className='nav'>about</Link>
 				</div>	

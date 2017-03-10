@@ -1,5 +1,10 @@
 a {
 	cursor: pointer;	
+	text-decoration: underline;
+}
+
+a:visited {
+	color: black;
 }
 
 a.nav {
@@ -38,16 +43,56 @@ h1.headline {
 	font-size: 4em;
 }
 
+/*
+h1.headline.project {
+	top: 30px;
+}
+*/
+
+h1.sub-headline {
+	font-size: 2em;
+	color: grey;
+}
+
+h1.sub-sub-headline {
+	font-size: 1em;
+	color: black;
+}
+
+.hor-line-thick {
+	height: 1px;
+	width: 90%;
+	background: black;
+	margin: 20px auto;
+	opacity: .25;
+}
+
+.hor-line-thin {
+	height: 1px;
+	width: 50%;
+	background: white;
+	margin: 10px auto;
+/*	opacity: .25;*/
+}
+
 img.profile {
 	border-radius: 50%;
 	height: 300px;
 	width: 300px;	
 }
 
+img.project-img {
+	width: 90%;
+}
+
 .navbar.welcome {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+p.project-p {
+	width: 90%;
 }
 
 p.welcome {
