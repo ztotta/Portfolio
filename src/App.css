@@ -51,14 +51,15 @@ a.nav:active {
 .hor-line-thick {
 	height: 1px;
 	width: 90%;
-	background: black;
+	max-width: 900px;
 	margin: 20px auto;
+	
+	background: black;
 	opacity: .25;
 }
 
 .hor-line-thin {
 	height: 1px;
-	width: 50%;
 	background: white;
 	margin: 10px auto;
 /*	opacity: .25;*/
@@ -72,6 +73,7 @@ img.profile {
 
 img.project-img {
 	width: 90%;
+	max-width: 900px;
 }
 
 .navbar.welcome {
@@ -92,6 +94,8 @@ p.welcome {
 
 table {
 	margin: 0 auto;
+	width: 90%;
+	max-width: 900px;
 }
 
 table.project-headline {
@@ -114,7 +118,6 @@ table.project-subSubHeadline {
 }
 
 table.project-text {
-	width: 90%;
 	text-align: left;
 }
 
