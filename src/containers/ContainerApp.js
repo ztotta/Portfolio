@@ -7,7 +7,7 @@ class ContainerApp extends Component {
 			<div className='App-container'>
 				{this.props.children}
 			</div>
-    );
+    );	
   }
 }
 

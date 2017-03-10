@@ -12,6 +12,14 @@ a.nav {
 	margin-right: 10px;
 }
 
+a.nav:hover {
+	transform: scale(1.025);
+}
+
+a.nav:active {
+	transform: scale(1.000);
+}
+
 .App-container {
 	position: absolute;
 	top: 5px;
@@ -39,25 +47,6 @@ a.nav {
 	flex-direction: column;
 }
 
-h1.headline {
-	font-size: 4em;
-}
-
-/*
-h1.headline.project {
-	top: 30px;
-}
-*/
-
-h1.sub-headline {
-	font-size: 2em;
-	color: grey;
-}
-
-h1.sub-sub-headline {
-	font-size: 1em;
-	color: black;
-}
 
 .hor-line-thick {
 	height: 1px;
@@ -89,6 +78,8 @@ img.project-img {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-top: 20px;
+  margin-bottom: 20px
 }
 
 p.project-p {
@@ -97,4 +88,37 @@ p.project-p {
 
 p.welcome {
 	max-width: 600px;
+}
+
+table {
+	margin: 0 auto;
+}
+
+table.project-headline {
+  font-size: 3em;
+  margin-top: 30px;
+}
+
+table.project-subHeadline {
+	margin-top: 10px;
+	
+	font-size: 2em;
+	color: grey;
+}
+
+table.project-subSubHeadline {
+	margin-top: 20px;
+	
+	font-size: 1em;
+	color: black;
+}
+
+table.project-text {
+	width: 90%;
+	text-align: left;
+}
+
+td.headline {
+	vertical-align: center;
+  text-align: center;
 }

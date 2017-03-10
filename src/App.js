@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import './App.css';
 import ContainerMain from './containers/ContainerMain';
 import Welcome from './views/Welcome';
-import Loops from './views/projects/Loops';
+import Loops from './views/projects/Loops.jsx';
 
 class App extends Component {
   render() {
