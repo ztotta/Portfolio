@@ -4,20 +4,21 @@ import station from '../../../public/loops/station.png';
 import createStation from '../../../public/loops/create-station.png';
 import loopCode from '../../../public/loops/loop-code.png';
 
-import FlexContainer from '../../components/FlexContainer.jsx';
+import FlexContainerCol from '../../components/FlexContainerCol.jsx';
 import BottomNav from '../../components/BottomNav.jsx';
 import ProjectImg from '../../components/projects/ProjectImg.jsx';
 import HorizontalLine from '../../components/HorizontalLine.jsx';
-import InvisiblePadding from '../../components/InvisiblePadding.jsx';
+//import InvisiblePadding from '../../components/InvisiblePadding.jsx';
 import ProjectHeadline from '../../components/projects/ProjectHeadline.jsx';
 import ProjectSubHeadline from '../../components/projects/ProjectSubHeadline.jsx';
 import ProjectSubSubHeadline from '../../components/projects/ProjectSubSubHeadline.jsx';
 import ProjectText from '../../components/projects/ProjectText.jsx';
+import ProjectContinue from '../../components/projects/ProjectContinue.jsx';
 
 class Loops extends Component {
   render() {
     return (
-			<FlexContainer>
+			<FlexContainerCol>
 				<ProjectHeadline headline='loopsWithFriends' />
 
 				<ProjectSubHeadline subHeadline='Angular | MongoDB | Node | Express' />
@@ -46,8 +47,10 @@ class Loops extends Component {
 				
 				<HorizontalLine />
 				
+				<ProjectContinue />
+				
 				<BottomNav />	
-			</FlexContainer>
+			</FlexContainerCol>
     );
   }
 }

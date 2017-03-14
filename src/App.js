@@ -5,6 +5,8 @@ import './App.css';
 import ContainerMain from './containers/ContainerMain';
 import Welcome from './views/Welcome';
 import Loops from './views/projects/Loops.jsx';
+import Projects from './views/projects/Projects.jsx';
+import Projects2 from './views/projects/Projects2.jsx';
 
 class App extends Component {
   render() {
@@ -13,6 +15,7 @@ class App extends Component {
 				<Route path='/' component={ContainerMain}>
 					<IndexRoute component={Welcome} />
 					<Route path='loops-with-friends' component={Loops} />
+					<Route path='projects' component={Projects2} />
 				</Route>
 			</Router>
     );

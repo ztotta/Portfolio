@@ -4,9 +4,11 @@ class ProjectSubHeadline extends Component {
   render() {
     return (
 			<table className="project-subHeadline">
-				<tr>
-					<td className='headline'>{this.props.subHeadline}</td>
-				</tr>
+				<tbody>
+					<tr>
+						<td className='headline'>{this.props.subHeadline}</td>
+					</tr>
+				</tbody>
 			</table>
     );
   }

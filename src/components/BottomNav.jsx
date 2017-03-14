@@ -6,7 +6,7 @@ class BottomNav extends Component {
     return (
 			<div className='navbar welcome center'>
 				<Link to='/' className='nav'>home</Link>
-				<Link to='loops-with-friends' className='nav'>projects</Link>
+				<Link to='projects' className='nav'>projects</Link>
 				<Link className='nav'>skills</Link>
 				<Link className='nav'>about</Link>
 			</div>	
