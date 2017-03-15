@@ -6,6 +6,7 @@
     "react-scripts": "0.9.4"
   },
   "dependencies": {
+    "jquery": "^3.1.1",
     "json-loader": "^0.5.4",
     "radium": "^0.18.1",
     "radium-grid": "^2.0.3",

@@ -4,7 +4,7 @@ const styles = {
 	table: {
 		position: 'fixed',
 		bottom: '10px',
-		left: '10px',
+		left: '20px',
 		width: '100px',
 	},
 	headline: {
