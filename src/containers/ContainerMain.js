@@ -4,13 +4,22 @@ import { Link } from 'react-router';
 
 import ContainerApp from './ContainerApp';
 
+//const styles = {
+//	sidebarItem: {
+//		color: 'pink',
+//	}
+//}
+
 class ContainerMain extends Component {
 	
 	render() {
 	
 		let items = [
-			<Link to='/'><SidebarItem>HOME</SidebarItem></Link>,
-			<Link to='/taking-quiz'><SidebarItem>PROJECTS</SidebarItem></Link>
+			<Link to='/'><SidebarItem className='sidebarItem'>home</SidebarItem></Link>,
+			<Link to='/projects'><SidebarItem className='sidebarItem'>skills</SidebarItem></Link>,
+			<Link to='/projects'><SidebarItem className='sidebarItem'>projects</SidebarItem></Link>,
+			<Link to='/projects'><SidebarItem className='sidebarItem'>testimonials</SidebarItem></Link>,
+			<Link to='/projects'><SidebarItem className='sidebarItem'>about</SidebarItem></Link>,
 //			<Link to='/sdfs'><SidebarItem>SKILLS</SidebarItem></Link>
 //			<Link to='/takisdsng-quiz'><SidebarItem>ABOUT ME</SidebarItem></Link>
 //			<Link to='/taking-sdsggsquiz'><SidebarItem>EXPERIENCE</SidebarItem></Link>

@@ -2,18 +2,19 @@ import React, {Component} from 'react';
 
 const styles = {
 	table: {
-		position: 'fixed',
-		bottom: '10px',
-		left: '20px',
-		width: '100px',
+//		position: 'fixed',
+//		bottom: '10px',
+//		left: '20px',
+//		width: '100px',
+		alignSelf: 'center',
 	},
 	headline: {
-		fontSize: 'calc(2em + 1.5vw)',
+		fontSize: 'calc(2em + 1.5vw)',	
 		fontWeight: '300',
 	}
 }
 
-class ProjectHeadline extends Component {
+class WelcomeHeadline extends Component {
   render() {
     return (
 			<table style={styles.table}>
@@ -27,4 +28,4 @@ class ProjectHeadline extends Component {
   }
 }
 
-export default ProjectHeadline;
+export default WelcomeHeadline;

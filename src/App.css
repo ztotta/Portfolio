@@ -1,6 +1,7 @@
 a {
 	cursor: pointer;	
-	text-decoration: underline;
+/*	text-decoration: underline;*/
+	font-weight: 300;
 }
 
 a:visited {
@@ -25,6 +26,7 @@ a.nav:active {
 	top: 5px;
 	bottom: 5px;
 	width: 100%;
+	display: flex;
 /*	background: #e0f7fa;*/
 /*
 	display: flex;
@@ -117,6 +119,16 @@ p.welcome {
 	width: 
 }
 */
+
+.project-img-hover {
+	cursor: pointer;
+	opacity: 1;
+	transition: opacity 0.25s ease-out;
+}
+
+.project-img-hover:hover {
+	opacity: 0.5;
+}
 
 table {
 /*	margin: 0 auto;*/
