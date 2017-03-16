@@ -1,9 +1,18 @@
 import React, {Component} from 'react';
 
+const styles = {
+	img: {
+		width: '100%',
+		minWidth: '300px',
+		maxWidth: '900px',
+		margin: 'auto',
+	},
+}
+
 class ProjectImg extends Component {
   render() {
     return (
-			<img className='project-img center' src={this.props.source} alt={this.props.alt} />
+			<img style={styles.img} src={this.props.source} alt={this.props.alt} />
     );
   }
 }

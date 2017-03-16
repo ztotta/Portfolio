@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 
 const styles = {
 	flexContainer: {
-//		position: 'absolute',
-//		left: '0px',
-//		bottom: '0px',
-//		top: '0px',
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'center',

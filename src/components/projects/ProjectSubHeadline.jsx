@@ -1,12 +1,26 @@
 import React, {Component} from 'react';
 
+const styles = {
+	table: {
+		textAlign: 'center',
+		margin: 'auto',
+	},
+	subHeadline: {
+		margin: 'auto',
+		marginTop: '10px',
+		fontSize: 'calc(1em + 1vw)',
+		color: 'grey',
+		fontWeight: '300',
+	},
+}
+
 class ProjectSubHeadline extends Component {
   render() {
     return (
-			<table className="project-subHeadline">
+			<table style={styles.table}>
 				<tbody>
 					<tr>
-						<td className='headline'>{this.props.subHeadline}</td>
+						<td style={styles.subHeadline}>{this.props.subHeadline}</td>
 					</tr>
 				</tbody>
 			</table>

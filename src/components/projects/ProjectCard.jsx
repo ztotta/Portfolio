@@ -1,12 +1,30 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router';
 var MediaQuery = require('react-responsive');
+import $ from 'jquery';
 
 const styles = {
+	explore: {
+		fontWeight: '300',
+		fontSize: 'calc(0.5em + 0.75vw)',
+		marginBottom: '5px',
+		opacity: '0',
+	},
+	exploreLine: {
+		opacity: '0.5',
+		height: '1px', 
+		background: 'black', 
+		marginLeft: '0px',
+		marginBottom: '5px',
+		width: '0',
+	},
+	projectCard: {
+		opacity: '0',
+	},
 	img: {
 		width: '100%',
 		zIndex: '10',
-	},
+	},	
 	h2: {
 		fontSize: 'calc(1em + 1vw)',
 		fontWeight: '300',
@@ -30,42 +48,49 @@ const styles = {
 
 
 class ProjectCard extends Component {
-	constructor(props) {
-    super(props);
-    this.state = {explore: false};
-  }
-	
+	componentDidMount() {
+		$(".project-card").animate({ opacity: 1 }, 1500); // fade-in project card opacity
+//		$(".project-img-hover").animate({ width: '100%' }, 1000); // fade-in project card img width
+	}
 
-	explore() {
-		this.setState({explore: true})
-		console.log('exploringnnn')
+	explore(id) {
+		$(`#${id}-text`).animate({ opacity: 1 }, 1000);
+		// fade-in explore line
+		$(`#${id}-line`).animate({ width: 100 }, 1000); 
 	}
 	
+	exploreNot(id) {
+		$(`#${id}-text`).animate({ opacity: 0 }, 400);       // fade-in explore text
+		$(`#${id}-line`).animate({ width: 0 }, 400);         // fade-out explore line
+	}
 	
   render() {
-		let exploring = null;
-		
-		if (this.state.explore || true) {
-			exploring = <h4 style={styles.h4}>explore</h4>
-		} else {
-			exploring = null
-		}
+		let exploreId = this.props.toUrl
 		
     return (
-			<div>
+			<div className='project-card' style={styles.projectCard}>
 				<MediaQuery minWidth={500}>
+					<h4 id={`${exploreId}-text`} style={styles.explore}>explore project</h4>
+					<div id={`${exploreId}-line`} style={styles.exploreLine}></div>
 					<div style={styles.cardLg}>
-						{exploring}
-						<Link to='/'>
-								<img className='project-img-hover' style={styles.img} src={this.props.imgSrc} alt=""/>
+						<Link to={this.props.toUrl}
+							    onMouseEnter={this.explore.bind(this, exploreId)}
+							    onMouseLeave={this.exploreNot.bind(this, exploreId)}>
+							<img className='project-img-hover' style={styles.img} src={this.props.imgSrc} alt=""/>
 						</Link>
 						<h2 style={styles.h2}>{this.props.title}</h2>
 						<h4 style={styles.h4}>{this.props.techUsed}</h4>
 					</div>
 				</MediaQuery>
 				<MediaQuery maxWidth={500}>
+					<h4 id={`${exploreId}-text`} style={styles.explore}>explore project</h4>
+					<div id={`${exploreId}-line`} style={styles.exploreLine}></div>
 					<div style={styles.cardXXSm}>
-						<img style={styles.img} src={this.props.imgSrc} alt=""/>
+						<Link to={this.props.toUrl}
+							    onMouseEnter={this.explore.bind(this, exploreId)}
+							    onMouseLeave={this.exploreNot.bind(this, exploreId)}>
+							<img className='project-img-hover' style={styles.img} src={this.props.imgSrc} alt=""/>
+						</Link>
 						<h2 style={styles.h2}>{this.props.title}</h2>
 						<h4 style={styles.h4}>{this.props.techUsed}</h4>
 					</div>

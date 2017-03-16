@@ -1,12 +1,24 @@
 import React, {Component} from 'react';
 
+const styles = {
+	table: {
+		textAlign: 'left',
+		width: '100%',
+		maxWidth: '900px',
+		margin: 'auto',
+	},
+	text: {
+		
+	},
+}
+
 class ProjectText extends Component {
   render() {
     return (
-			<table className='project-text'>
+			<table style={styles.table}>
 				<tbody>
 					<tr>
-						<td className='project-text'>{this.props.text}</td>
+						<td style={styles.text}>{this.props.text}</td>
 					</tr>
 				</tbody>
 			</table>
