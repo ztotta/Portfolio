@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router';
 import $ from 'jquery';
+//import particlesJS from 'particles.js';
+import Particles from 'react-particles-js';
 
 import profile from '../../public/snow_river2.png';
 
@@ -16,9 +19,14 @@ const styles = {
 		textAlign: 'center',
 		flexDirection: 'column'
 	},
+	particlesContainer: {
+		height: '100%',
+		width: '100%',
+	},
 	table: {
 		alignSelf: 'center',
 		height: '100%',
+		position: 'absolute',
 	},
 	img : {
 		borderRadius: '50%',
@@ -40,58 +48,122 @@ const styles = {
 	},
 }
 
-// TO DO: convert to table
-
-//<div id='welcome-container' style={styles.container}>
-//	<WelcomeHeadline headline='_zachTotta' />
-//	<img id='profile-img' style={styles.img} src={profile} alt="profile-pic"/>
-//	<p style={styles.services} id='services' style={styles.services}>web development <span style={styles.light}>|</span> apps <span style={styles.light}>|</span> prototyping</p>
-//	<p style={styles.intro}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio iusto accusantium earum veniam, cupiditate harum. Molestiae perspiciatis eveniet nam, necessitatibus officiis error assumenda provident totam magni voluptatibus pariatur nemo.</p>
-//</div>
+// Profile Img
+// <img id='profile-img' style={styles.img} src={profile} alt="profile-pic"/>
 
 class Welcome extends Component {
 	componentDidMount() {
-		$("#welcome-container").animate({ opacity: 1 }, 1500);                 // fade-in welcome screen
+		// Fade-in welcome screen
+		$("#welcome-container").animate({ opacity: 1 }, 1500);                  
+		
+		///////////////////////////////////////
+		// Profile Image Circle Animations: ///
+		///////////////////////////////////////
+		const $kanvas = $('canvas').first()
+		
+		$kanvas.css({"animation":"spin 5s"}); // spin profile image animation
+		
+		if (window.innerWidth > 499) {        // assign height depending on MediaQuery:
+			$kanvas.css({height: '300px', width: '300px', borderRadius: '50%', margin: 'auto'});
+		} else {
+			$kanvas.css({height: '200px', width: '200px', borderRadius: '50%', margin: 'auto'});
+		}
+		
+//		$kanvas.hover(() => {
+//			$(this).animate({ background: 'red' }, 1000);
+//		})
+		///////////////////////////////////////
 		
 		// Determine height of table:
-		$('#welcome-table').css({height: (window.innerHeight - 58) + 'px'});   // bottom nav size + margins = 58px
-		
-		// Profile Image Animations:
-		if (window.innerWidth > 499) {
-			$("#profile-img").animate({width: '300px', height: '300px' }, 1000); // grow profile image animation
-		} else {
-			$("#profile-img").animate({width: '200px', height: '200px' }, 1000); // grow profile image animation
-		}
-		$('#profile-img').css({"animation":"spin 1s"});                        // spin profile image animation
+		$('#welcome-table').css({height: (window.innerHeight - 58) + 'px'});    // bottom nav size + margins = 58px	
 	}
 	
   render() {
     return (
-			<div id='welcome-container' style={styles.container}>
-				<table id='welcome-table' style={styles.table}>
-					<tbody>
-						<tr>
-							<WelcomeHeadline headline='_zachTotta' />
-						</tr>
-						<tr>
-							<td>
-								<p style={styles.services} id='services' style={styles.services}>sites <span style={styles.light}>|</span> apps <span style={styles.light}>|</span> prototyping</p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img id='profile-img' style={styles.img} src={profile} alt="profile-pic"/>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p style={styles.intro}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam optio iusto accusantium earum veniam, cupiditate harum. Molestiae perspiciatis eveniet nam, necessitatibus officiis error assumenda provident totam magni voluptatibus pariatur nemo.</p>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<BottomNav />
-			</div>
+
+				<div id='welcome-container' style={styles.container}>
+					
+					
+					<table id='welcome-table' style={styles.table}>
+						<tbody>
+							<tr>
+								<WelcomeHeadline headline='_zachTotta' />
+							</tr>
+							<tr>
+								<td>
+									<p style={styles.services} id='services' style={styles.services}>sites <span style={styles.light}>|</span> apps <span style={styles.light}>|</span> prototyping</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<Link to='projects'>
+										<Particles 
+											params={{
+												particles: {
+													line_linked: {
+														shadow: {
+															enable: true,
+															color: 'black',
+															blur: 1
+														}
+													},
+													move: {
+														enable: true,
+														speed: 5,
+														direction: "none",
+														random: false,
+														straight: false,
+														out_mode: "out",
+														bounce: true,
+														attract: {
+															enable: false,
+															rotateX: 600,
+															rotateY: 1200
+														}
+													},
+													interactivity: {
+														detect_on: "welcome-container",
+														events: {
+															onhover: {
+																enable: true,
+																mode: "repulse"
+															},
+															onclick: {
+																enable: false,
+																mode: "push"
+															},
+															resize: true
+														},
+													}
+												}}} 
+										/>
+									</Link>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p style={styles.intro}>Why hello! My name is Zach Totta and I’m a San Francisco-based freelancer. 
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p style={styles.intro}>I build custom, modern websites & apps with the most up-to-date techniques and technologies available.  
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p style={styles.intro}>
+										Please, come in. Stay a while. 
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<BottomNav />
+				</div>
+
     );
   }
 }
