@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+//import ReactDOM from 'react-dom';
 
 import tone from '../../../public/tone/toneQuiz.gif';
 import toneCode from '../../../public/tone/tone-quiz-code.png';
@@ -43,11 +44,21 @@ const styles = {
 }
 
 class Tone extends Component {
+	componentDidUpdate() { 
+		console.log('updated component')
+//		ReactDOM.findDOMNode(this).scrollTop = 0
+	}
+	
+	componentWillUnmount() {
+		console.log('componentWillUnmount() tone')
+//		this._div.scrollTop = 0
+//		ReactDOM.findDOMNode(this).scrollTop = 0
+	}
+	
 	componentDidMount() {
-		// Measuring spacerLine width by screen size:
-		const windowHeight = window.innerHeight;
-		// Grow-right animation:
-		$(".spacer-line-vertical").animate({ height: windowHeight * 0.7 }, 1000);
+//		ReactDOM.findDOMNode(this).scrollIntoView(); 
+		// Grow-right animation, by windowHeight:
+		$(".spacer-line-vertical").animate({ height: window.innerHeight * 0.7 }, 1000);
 	}
 	
   render() {
@@ -62,7 +73,7 @@ class Tone extends Component {
 
 					<HorizontalLine />
 
-					<img style={styles.img} src={tone} />
+					<img style={styles.img} src={tone} alt='tone' />
 
 					<HorizontalLine />
 

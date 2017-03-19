@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import $ from 'jquery';
 
 const styles = {
 	table: {
@@ -12,11 +11,7 @@ const styles = {
 	}
 }
 
-class ProjectHeadline extends Component {
-	componentDidMount() {
-//		$(".project-headline").animate({ opacity: 1 }, 1500);
-	}
-	
+class ProjectHeadline extends Component {	
   render() {
     return (
 			<table style={styles.table}>

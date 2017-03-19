@@ -66,11 +66,12 @@ const projects = [
 ]
 
 class Projects extends Component {
+	
 	componentDidMount() {
 		// Measuring spacerLine width by screen size:
 		const windowWidth = window.innerWidth;
 		// Grow-right animation:
-		$("#spacer-line").animate({ width: windowWidth * 0.8 }, 1000);
+		$("#spacer-line").animate({ width: windowWidth * 0.65 }, 1000);
 		// Calculate gallery-navbar margin to match MediaQuery of ProjectCards (ProjectCard marginRight & Link marginRight):
 		$("#gallery-navbar").css({ right: windowWidth > 499 ? '93px' : '43px'});
 	}

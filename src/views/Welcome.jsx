@@ -4,8 +4,6 @@ import $ from 'jquery';
 //import particlesJS from 'particles.js';
 import Particles from 'react-particles-js';
 
-import profile from '../../public/snow_river2.png';
-
 import BottomNav from '../components/BottomNav.jsx';
 import WelcomeHeadline from '../components/WelcomeHeadline.jsx';
 
@@ -28,11 +26,14 @@ const styles = {
 		height: '100%',
 		position: 'absolute',
 	},
-	img : {
+	img: {
 		borderRadius: '50%',
 		height: '0px',
 		width: '0px',
 		margin: 'auto',
+	},
+	link: {
+		textDecoration: 'none',
 	},
 	services: {
 		letterSpacing: '0.8px',
@@ -52,6 +53,11 @@ const styles = {
 // <img id='profile-img' style={styles.img} src={profile} alt="profile-pic"/>
 
 class Welcome extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {numParticles: 50}
+	}
+	
 	componentDidMount() {
 		// Fade-in welcome screen
 		$("#welcome-container").animate({ opacity: 1 }, 1500);                  
@@ -61,21 +67,17 @@ class Welcome extends Component {
 		///////////////////////////////////////
 		const $kanvas = $('canvas').first()
 		
-		$kanvas.css({"animation":"spin 5s"}); // spin profile image animation
-		
 		if (window.innerWidth > 499) {        // assign height depending on MediaQuery:
-			$kanvas.css({height: '300px', width: '300px', borderRadius: '50%', margin: 'auto'});
+			$kanvas.css({height: '300px', width: '300px', margin: 'auto'});
 		} else {
-			$kanvas.css({height: '200px', width: '200px', borderRadius: '50%', margin: 'auto'});
+			$kanvas.css({height: '200px', width: '200px', margin: 'auto'});
 		}
-		
-//		$kanvas.hover(() => {
-//			$(this).animate({ background: 'red' }, 1000);
-//		})
 		///////////////////////////////////////
 		
 		// Determine height of table:
 		$('#welcome-table').css({height: (window.innerHeight - 58) + 'px'});    // bottom nav size + margins = 58px	
+		
+		if (window.innerWidth > 499) this.setState({numParticles: 10});
 	}
 	
   render() {
@@ -91,7 +93,9 @@ class Welcome extends Component {
 							</tr>
 							<tr>
 								<td>
-									<p style={styles.services} id='services' style={styles.services}>sites <span style={styles.light}>|</span> apps <span style={styles.light}>|</span> prototyping</p>
+									<Link style={styles.link} to='skills'>
+										<p style={styles.services} id='services'>sites <span style={styles.light}>|</span> apps <span style={styles.light}>|</span> prototyping</p>
+									</Link>
 								</td>
 							</tr>
 							<tr>
@@ -107,22 +111,30 @@ class Welcome extends Component {
 															blur: 1
 														}
 													},
+													number: {
+														value: this.state.numParticles
+													},
+													shape: {
+														polygon: {
+															nb_sides: 6
+														}
+													},	
 													move: {
 														enable: true,
-														speed: 5,
+														speed: 3,
 														direction: "none",
 														random: false,
 														straight: false,
-														out_mode: "out",
-														bounce: true,
+														out_mode: "bounce",
+														bounce: false,
 														attract: {
-															enable: false,
+															enable: true,
 															rotateX: 600,
 															rotateY: 1200
 														}
 													},
 													interactivity: {
-														detect_on: "welcome-container",
+														detect_on: "window",
 														events: {
 															onhover: {
 																enable: true,
@@ -134,7 +146,8 @@ class Welcome extends Component {
 															},
 															resize: true
 														},
-													}
+													},
+													retina_detect: 'true',	
 												}}} 
 										/>
 									</Link>

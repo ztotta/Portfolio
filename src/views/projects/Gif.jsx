@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+//import ReactDOM from 'react-dom';
 
 import gif from '../../../public/gif/gif.gif';
 import gifCode from '../../../public/gif/promises.png';
@@ -43,11 +44,14 @@ const styles = {
 }
 
 class Gif extends Component {
+	componentDidUpdate() { 
+		console.log('updated component')
+//		ReactDOM.findDOMNode(this).scrollIntoView(); 
+	}
+	
 	componentDidMount() {
-		// Measuring spacerLine width by screen size:
-		const windowHeight = window.innerHeight;
-		// Grow-right animation:
-		$(".spacer-line-vertical").animate({ height: windowHeight * 0.7 }, 1000);
+		// Grow-right animation by windowHeight:
+		$(".spacer-line-vertical").animate({ height: window.innerHeight * 0.7 }, 1000);
 	}
 	
   render() {
@@ -62,7 +66,7 @@ class Gif extends Component {
 
 					<HorizontalLine />
 
-					<img style={styles.img} src={gif} />
+					<img style={styles.img} src={gif} alt='pic' />
 
 					<HorizontalLine />
 

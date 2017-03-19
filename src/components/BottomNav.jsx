@@ -14,7 +14,6 @@ class BottomNav extends Component {
   render() {
     return (
 			<div style={styles.navbar}>
-				<Link to='/' className='nav'>home</Link>
 				<Link to='skills' className='nav'>skills</Link>
 				<Link to='projects' className='nav'>projects</Link>
 				<Link to='about' className='nav'>about</Link>

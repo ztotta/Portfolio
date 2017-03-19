@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+//import ReactDOM from 'react-dom';
 
 import station from '../../../public/loops/station.png';
 import createStation from '../../../public/loops/create-station.png';
@@ -9,7 +10,6 @@ import FlexContainerCol from '../../components/FlexContainerCol.jsx';
 import BottomNavExplore from '../../components/BottomNavExplore.jsx';
 import ProjectImg from '../../components/projects/ProjectImg.jsx';
 import HorizontalLine from '../../components/HorizontalLine.jsx';
-//import InvisiblePadding from '../../components/InvisiblePadding.jsx';
 import ExploreHeadline from '../../components/projects/ExploreHeadline.jsx';
 import ProjectSubHeadline from '../../components/projects/ProjectSubHeadline.jsx';
 import ProjectSubSubHeadline from '../../components/projects/ProjectSubSubHeadline.jsx';
@@ -40,6 +40,16 @@ const styles = {
 }
 
 class Loops extends Component {
+	componentDidUpdate() { 
+		console.log('updated component')
+//		ReactDOM.findDOMNode(this).scrollTop = 0
+	}
+	
+	componentWillUnmount() {
+		console.log('componentWillUnmount() loop')
+//		this._div.scrollTop = 0
+	}
+	
 	componentDidMount() {
 		// Measuring spacerLine width by screen size:
 		const windowHeight = window.innerHeight;
@@ -52,7 +62,7 @@ class Loops extends Component {
 			<div style={styles.wrapper}>
 				<div className='spacer-line-vertical' style={styles.spacerLine}></div>
 				<div style={styles.arrowTip}>v</div>
-				<FlexContainerCol>
+				<FlexContainerCol ref={(ref) => this._div = ref} >
 					<ExploreHeadline headline='_loopsWithFriends' />
 
 					<ProjectSubHeadline subHeadline='Angular | MongoDB | Node | Express' />

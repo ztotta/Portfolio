@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+//import ReactDOM from 'react-dom';
 
 import EightBitGif from '../../../public/8_bit/8bit.gif';
 import EightBitCode from '../../../public/8_bit/8_bit_code.png';
@@ -43,6 +44,11 @@ const styles = {
 }
 
 class EightBit extends Component {
+	componentDidUpdate() { 
+		console.log('updated component')
+//		ReactDOM.findDOMNode(this).scrollToTop(); 
+	}
+	
 	componentDidMount() {
 		// Measuring spacerLine width by screen size:
 		const windowHeight = window.innerHeight;
@@ -62,7 +68,7 @@ class EightBit extends Component {
 
 					<HorizontalLine />
 
-					<img style={styles.img} src={EightBitGif} />
+					<img style={styles.img} src={EightBitGif} alt='pic' />
 
 					<HorizontalLine />
 

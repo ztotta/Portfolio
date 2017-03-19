@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import $ from 'jquery';
+//import $ from 'jquery';
 
-const styles = {
-	exploreContainer: {
-		opacity: '0',
-	},
-}
+//const styles = {
+//	exploreContainer: {
+//		opacity: '0',
+//	},
+//}
 
 class About extends Component {
 	componentDidMount() {
