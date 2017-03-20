@@ -26,12 +26,17 @@ const styles = {
 	},
 	subHeaderBar: {
 		fontSize: '1.2em',
+		borderBottom: '1px solid black',
+		width: '90%',
+		maxWidth: '900px',
 	},
 	subHeader: {
-		textDecoration: 'underline',
 		cursor: 'pointer',
-		marginLeft: '10px',
-		marginRight: '10px',
+		paddingLeft: '10px',
+		paddingRight: '10px',
+		borderRadius: '10px 10px 0 0',
+		border: '1px solid black',
+		marginLeft: '2px',
 	},
 	emptyTD: {
 		height: '60px',
@@ -61,7 +66,29 @@ class Skills extends Component {
 		
 		this.state = {
 			showContent: true,
-			content: null,
+			content: 
+				<tbody>
+						<tr className='skill-2' style={styles.tr}>
+							<td>
+								I build clean, modern websites that present your brand with professionalism and class.
+							</td>
+						</tr>	
+						<tr className='skill-2-5' style={styles.tr}>
+							<td>
+								I use JavaScript + CSS + HTML & the most current frameworks available to deliver the experiences 
+								that today's users have come to expect.
+							</td>
+						</tr>	
+						<tr className='skill-2-6' style={styles.tr}>
+							<td>
+								I use Drupal as a Content Management System so that you can easily update and tweak 
+								your site's content without relying on me or any other developer to do it for you.
+							</td>
+						</tr>
+				</tbody>,
+			showSites: true,
+			showApps: false,
+			showCommunication: false,
 		}
 	}
 	
@@ -98,11 +125,14 @@ class Skills extends Component {
 						</tr>	
 						<tr className='skill-2-6' style={styles.tr}>
 							<td>
-								I use WordPress as a Content Management System so that you can easily update and tweak 
+								I use Drupal as a Content Management System so that you can easily update and tweak 
 								your site's content without relying on me or any other developer to help you out in the future.
 							</td>
 						</tr>
-				</tbody>
+				</tbody>,
+				showSites: true,
+				showApps: false,
+				showCommunication: false,
 			}, () => {
 				this.animateContent();
 			})
@@ -126,7 +156,10 @@ class Skills extends Component {
 								coding features, fixing bugs, etc.
 							</td>
 						</tr>
-					</tbody>
+					</tbody>,
+				showSites: false,
+				showApps: true,
+				showCommunication: false,
 			}, () => {
 				this.animateContent();
 			})
@@ -141,7 +174,10 @@ class Skills extends Component {
 								on false starts or dead ends. 
 							</td>
 						</tr>	
-					</tbody>
+					</tbody>,
+				showSites: false,
+				showApps: false,
+				showCommunication: true,
 			}, () => {
 				this.animateContent();
 			})
@@ -149,21 +185,29 @@ class Skills extends Component {
 	}
 	
   render() {
+		let sitesClasses         = ['skills-subHeader'];
+		let appsClasses          = ['skills-subHeader'];
+		let communicationClasses = ['skills-subHeader'];
+		
+		if (this.state.showSites) { sitesClasses.push('tabOpen') };
+		if (this.state.showApps) { appsClasses.push('tabOpen') };
+		if (this.state.showCommunication) { communicationClasses.push('tabOpen') };
+		
     return (
 			<div id='skills-wrapper' style={styles.wrapper}>
 				<div id='skills-header' style={styles.header}>skills</div>
 				<div className='skills-subHeader' style={styles.subHeaderBar}>
-					<span className='skills-subHeader' 
+					<span className={sitesClasses.join(' ')}
 								style={styles.subHeader}
 								onClick={this.showContent.bind(this, 'sites')}>
 						sites 
 					</span>
-					<span className='skills-subHeader' 
+					<span className={appsClasses.join(' ')} 
 								style={styles.subHeader}
 								onClick={this.showContent.bind(this, 'apps')}> 
 							 apps 
 					</span>
-					<span className='skills-subHeader' 
+					<span className={communicationClasses.join(' ')} 
 								style={styles.subHeader}
 								onClick={this.showContent.bind(this, 'communication')}> 
 							 communication 

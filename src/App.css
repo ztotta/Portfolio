@@ -148,24 +148,9 @@ p.welcome {
 	opacity: 0.5;
 }
 
-/*table {*/
-/*	margin: 0 auto;*/
-/*	width: 90%;*/
-/*	max-width: 900px;*/
-/*}*/
-
-/*
-.skills-subHeader {
-	text-decoration: underline;
-	cursor: pointer;
+.tabOpen {
+	background: lightgrey;
 }
-*/
-
-/*
-.skills-subHeader:hover {
-	opacity: '0'
-}
-*/
 
 table.project-card {
 	padding: 0;
