@@ -154,6 +154,19 @@ p.welcome {
 /*	max-width: 900px;*/
 /*}*/
 
+/*
+.skills-subHeader {
+	text-decoration: underline;
+	cursor: pointer;
+}
+*/
+
+/*
+.skills-subHeader:hover {
+	opacity: '0'
+}
+*/
+
 table.project-card {
 	padding: 0;
 	margin-bottom: 20px;
@@ -194,6 +207,17 @@ table.project-subSubHeadline {
 @keyframes rise {
   0% {
   	transform: translateY(100px);  
+		opacity: 0;
+  }
+  100% {
+  	transform: translateY(0px);  
+		opacity: 1;
+  }
+}
+
+@keyframes fall {
+  0% {
+  	transform: translateY(-50px);  
 		opacity: 0;
   }
   100% {
