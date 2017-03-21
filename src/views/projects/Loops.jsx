@@ -71,20 +71,41 @@ class Loops extends Component {
 
 					<HorizontalLine />
 
+					<ProjectText text='This is a single-page, real-time, MEAN-stack app built with MongoDB, AngularJS / UI-Router, Node.js + Express, JavaScript, 
+						 					 Socket.io, JSON Webtoken Authentication, Materialize, HTML, & CSS. The sounds are synthesized with basic waveforms via the 
+											 Web Audio API, made simpler by the Web Audio DAW library.' />
+						
+					<HorizontalLine />
+					
+					<ProjectText text='Users build loop-based beats with 6 instruments, 384 launch-pads, and as many friends as they care to invite.
+											 Each pad on each instrument panel represents one 1/16th note, the grey pads are quarter notes, there are 4 measures, and 
+											 the metronome cycles through in red to help the user follow the beat.
+											 The "instrument" buttons at the top of the page toggle Mute On/Off.
+											 The percussion instrument pads simply toggle On/Off, while the melodic instrument pads cycle through the Javanese slendro 
+											 scale.' />	
+					
+					<HorizontalLine />					 											 						 
+											 											 
 					<ProjectImg source={station} alt='station' />
-
+					
 					<HorizontalLine />
 
-					<ProjectText text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eveniet pariatur in doloribus id blanditiis magni inventore? Eum quia quae itaque quod ullam! Aspernatur excepturi veritatis cum, harum ipsa perferendis?' />
-
+					<ProjectText text='A challenge here was building the loop-stations as reusable components, where each station has 6 instruments, and each instrument has 64 
+						  				 launchpads, so that they can all be manipulated, monitored, and updated predictably. This allows for simple expansion if more 
+											 instruments were to be added in the future. See code snippet below:' />
 					<HorizontalLine />
-
+					
 					<ProjectImg source={createStation} alt='create-station' />
 
 					<HorizontalLine />
 
-					<ProjectText text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eveniet pariatur in doloribus id blanditiis magni inventore? Eum quia quae itaque quod ullam! Aspernatur excepturi veritatis cum, harum ipsa perferendis?' />
-
+					<ProjectText text="Another challenge was triggering the loop-stations to play back in real-time and adjust for mid-loop 
+						  			   changes to the steps. This was resolved with a Promise.all for each of the 64 steps, where for each step it cycles through 
+						  			   the 6 instruments and calls a setTimeout on each. 
+						  			   Once they all resolve, it cycles through again and calls 'playStep'   			 for each instrument, triggering the correct note for the 
+						  			   step at the current iteration (wherever 'i' is in the count), granted the instrument is unmuted. Meanwhile, the next step's 
+						  			   Promise.all is underway, granted the loop is still toggled 'On'. See code snippet below:" />
+				
 					<HorizontalLine />
 
 					<ProjectImg source={loopCode} alt='loop-code' />

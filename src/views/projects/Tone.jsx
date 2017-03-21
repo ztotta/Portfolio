@@ -73,19 +73,27 @@ class Tone extends Component {
 
 					<HorizontalLine />
 
+					<ProjectText text='This is a single-page React App that lets users test their pitch recognition in a short quiz and then receive their results.' />
+					
+					<HorizontalLine />
+				
 					<img style={styles.img} src={tone} alt='tone' />
 
 					<HorizontalLine />
 
-					<ProjectText text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eveniet pariatur in doloribus id blanditiis magni inventore? Eum quia quae itaque quod ullam! Aspernatur excepturi veritatis cum, harum ipsa perferendis?' />
+					<ProjectText text='As a pure frontend app, my focus
+							 				 was on the User Interaction/Experience, with special attention paid to component responsiveness, React Motion animations, 
+							 				 and mobile-first design. I employed React Music to handle the pitch creation.' />
 
 					<HorizontalLine />
+					
+					<ProjectText text="The biggest challenges here were in setting up the game logic and synchronizing the animations with the user actions. 
+							This snippet shows the logic that checks for correctness after a user guess, triggering animations, updating the state
+							of the user's quiz, and readying the next question, depending on whether the user guessed correctly or not:" />
 
+					<HorizontalLine />
+					
 					<ProjectImg source={toneCode} alt='create-station' />
-
-					<HorizontalLine />
-
-					<ProjectText text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eveniet pariatur in doloribus id blanditiis magni inventore? Eum quia quae itaque quod ullam! Aspernatur excepturi veritatis cum, harum ipsa perferendis?' />
 
 					<HorizontalLine />
 

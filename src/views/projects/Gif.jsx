@@ -66,19 +66,28 @@ class Gif extends Component {
 
 					<HorizontalLine />
 
+					<ProjectText text='A team-built full-stack app using MongoDB, Node.js + Express, JavaScript, jQuery / AJAX, Google OAuth 2.0, Materialize, HTML, CSS and the Giphy API. Deployed via Heroku.' />
+					
+					<HorizontalLine />
+								
+					<ProjectText text='After signing up through Google OAuth 2.0, users answer survey questions about their lives. Their results are then returned in a vertical timeline with their responses represented by corresponding .gifs pulled from the Giphy API.
+											 Users can then share these results with a unique URL and/or retake the survey.
+											 They can also search for individual .gifs from the Giphy API, without logging in, through our homepage InstaGif feature.' />
+											 
+					<HorizontalLine />
+					
 					<img style={styles.img} src={gif} alt='pic' />
 
 					<HorizontalLine />
-
-					<ProjectText text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eveniet pariatur in doloribus id blanditiis magni inventore? Eum quia quae itaque quod ullam! Aspernatur excepturi veritatis cum, harum ipsa perferendis?' />
-
+					
+					<ProjectText text="The biggest challenge for me was sending data to and from our Mongo database and the Giphy API using a mix of AJAX and HTTP requests, and then 
+											 populating that data onto the Results page timeline in the correct order. I resolved this by writing a Promise.all 
+											 that gathers the asynchronous responses into one array so that they can then be sorted by their index property into the
+											 correct order again." />
+					
 					<HorizontalLine />
 
 					<ProjectImg source={gifCode} alt='create-loops' />
-
-					<HorizontalLine />
-
-					<ProjectText text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eveniet pariatur in doloribus id blanditiis magni inventore? Eum quia quae itaque quod ullam! Aspernatur excepturi veritatis cum, harum ipsa perferendis?' />
 
 					<HorizontalLine />
 
