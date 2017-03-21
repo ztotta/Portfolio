@@ -1,22 +1,15 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router';
-//var MediaQuery = require('react-responsive');
 import $ from 'jquery';
 import HorizontalScroll from 'react-scroll-horizontal';
 
 import station from '../../../public/loops/station.png';
-//import toneQuiz from '../../../public/tone/tone-quiz.png';
 import tone from '../../../public/tone/toneQuiz.gif';
-//import EightBitPic from '../../../public/8_bit/8_bit.png';
 import EightBitGif from '../../../public/8_bit/8bit.gif';
-//import gifHome from '../../../public/gif/gif_3.png';
 import gif from '../../../public/gif/gif.gif';
 
-//import FlexContainerGrid from '../../components/FlexContainerGrid.jsx';
-////import InvisiblePadding from '../../components/InvisiblePadding.jsx';
 import ProjectCard from '../../components/projects/ProjectCard.jsx';
 import ProjectHeadline from '../../components/projects/ProjectHeadline.jsx';
-//import BottomNavRight from '../../components/BottomNavRight';
 
 const styles = {
 	container: {
