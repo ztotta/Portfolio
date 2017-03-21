@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+import { Link } from 'react-router';
 //import ReactDOM from 'react-dom';
 
 import gif from '../../../public/gif/gif.gif';
 import gifCode from '../../../public/gif/promises.png';
 
 import FlexContainerCol from '../../components/FlexContainerCol.jsx';
-import BottomNavExplore from '../../components/BottomNavExplore.jsx';
+//import BottomNavExplore from '../../components/BottomNavExplore.jsx';
 import ProjectImg from '../../components/projects/ProjectImg.jsx';
 import HorizontalLine from '../../components/HorizontalLine.jsx';
 import ExploreHeadline from '../../components/projects/ExploreHeadline.jsx';
@@ -40,6 +41,14 @@ const styles = {
 		minWidth: '300px',
 		maxWidth: '600px',
 		margin: 'auto',
+	},
+	nav: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		margin: 'auto',
+		marginTop: '20px',
+		marginBottom: '20px',
 	},
 }
 
@@ -91,7 +100,12 @@ class Gif extends Component {
 
 					<HorizontalLine />
 
-					<BottomNavExplore prev='8-bit-beatdown' next='loops-with-friends' />	
+					<div style={styles.nav}>
+						<Link to='8-bit-beatdown' className='nav'>previous</Link>
+						<Link to='/' className='nav'>home</Link>
+						<Link to='skills' className='nav'>skills</Link>
+						<Link to='contact' className='nav'>contact</Link>
+					</div>
 				</FlexContainerCol>
 			</div>
     );

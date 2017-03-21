@@ -45,10 +45,6 @@ const styles = {
 		position: 'absolute',
 		bottom: '20px',
 	},
-	navItem: {
-		marginLeft: '10px',
-		marginRight: '10px',
-	},
 	arrow: {
 		color: '#e0f7fa',
 		width: '60px',
@@ -219,10 +215,10 @@ class Skills extends Component {
 				</table>
 				
 				<div id='skill-nav' style={styles.navbar}>
-					<Link to='/' style={styles.navItem}>home</Link>
-					<Link to='projects' style={styles.navItem}>projects</Link>
-					<Link to='about' style={styles.navItem}>about</Link>
-					<Link to='contact' style={styles.navItem}>contact</Link>
+					<Link to='/' className='nav'>home</Link>
+					<Link to='projects' className='nav'>projects</Link>
+					<Link to='about' className='nav'>about</Link>
+					<Link to='contact' className='nav'>contact</Link>
 				</div>
 			</div>
     );

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
-//import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import tone from '../../../public/tone/toneQuiz.gif';
 import toneCode from '../../../public/tone/tone-quiz-code.png';
@@ -44,18 +44,23 @@ const styles = {
 }
 
 class Tone extends Component {
-	componentDidUpdate() { 
-		console.log('updated component')
-//		ReactDOM.findDOMNode(this).scrollTop = 0
+	componentWillMount() {
+//		window.scroll(0,0)
+		console.log('componentWillMount')
+	}
+	
+	componentDidUpdate() {
+		ReactDOM.findDOMNode(this).scrollTop = 0
+		console.log('componentDidUpdate, tone')
 	}
 	
 	componentWillUnmount() {
-		console.log('componentWillUnmount() tone')
-//		this._div.scrollTop = 0
-//		ReactDOM.findDOMNode(this).scrollTop = 0
+//		window.scroll(0,0)
+		console.log('componentWillUnmount')
 	}
 	
 	componentDidMount() {
+		window.scrollTo(0,0)
 //		ReactDOM.findDOMNode(this).scrollIntoView(); 
 		// Grow-right animation, by windowHeight:
 		$(".spacer-line-vertical").animate({ height: window.innerHeight * 0.7 }, 1000);

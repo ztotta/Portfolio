@@ -52,10 +52,6 @@ const styles = {
 		right: '100px',
 		bottom: '10px',
 	},
-	link: {
-		marginRight: '10px',
-		marginLeft: '10px',
-	},
 }
 
 const projects = [
@@ -106,10 +102,10 @@ class Projects extends Component {
 					</table>
 
 					<div id='gallery-navbar' style={styles.navbar}>
-						<Link to='/' style={styles.link}>home</Link>
-						<Link to='skills' style={styles.link}>skills</Link>
-						<Link to='about' style={styles.link}>about</Link>
-						<Link to='contact' style={styles.link}>contact</Link>
+						<Link to='/' className='nav'>home</Link>
+						<Link to='skills' className='nav'>skills</Link>
+						<Link to='about' className='nav'>about</Link>
+						<Link to='contact' className='nav'>contact</Link>
 					</div>
 					
 					<ProjectHeadline headline='_projects' />

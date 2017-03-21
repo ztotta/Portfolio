@@ -19,10 +19,6 @@ const styles = {
 		position: 'absolute',
 		bottom: '20px',
 	},
-	navItem: {
-		marginLeft: '10px',
-		marginRight: '10px',
-	}
 }
 
 class Contact extends Component {
@@ -41,10 +37,10 @@ class Contact extends Component {
 					<h4>+1 (913) 558-0761</h4>
 				</div>
 				<div style={styles.navbar}>
-					<Link to='/' style={styles.navItem}>home</Link>
-					<Link to='skills' style={styles.navItem}>skills</Link>
-					<Link to='projects' style={styles.navItem}>projects</Link>
-					<Link to='about' style={styles.navItem}>about</Link>
+					<Link to='/' className='nav'>home</Link>
+					<Link to='skills' className='nav'>skills</Link>
+					<Link to='projects' className='nav'>projects</Link>
+					<Link to='about' className='nav'>about</Link>
 				</div>
 			</div>
     );

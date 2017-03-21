@@ -19,11 +19,7 @@ a.nav {
 }
 
 a.nav:hover {
-	transform: scale(1.025);
-}
-
-a.nav:active {
-	transform: scale(1.000);
+	opacity: 0.5;
 }
 
 .App-container {
