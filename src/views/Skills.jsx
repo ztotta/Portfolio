@@ -92,6 +92,7 @@ class Skills extends Component {
 		$('#skills-header').css({"animation":"fall 1s"});
 		$('.skills-subHeader').css({"animation":"slide-fade 1.25s"});
 		$('#skill-nav').css({"animation":"rise 1.5s"});
+		this.animateContent();
 	}
 	
 	animateContent() {

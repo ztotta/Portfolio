@@ -41,6 +41,14 @@ const styles = {
 		maxWidth: '600px',
 		margin: 'auto',
 	},
+	nav: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		margin: 'auto',
+		marginTop: '20px',
+		marginBottom: '20px',
+	},
 }
 
 class Tone extends Component {
@@ -101,6 +109,11 @@ class Tone extends Component {
 					<ProjectImg source={toneCode} alt='create-station' />
 
 					<HorizontalLine />
+					
+					<div style={styles.nav}>
+						<a href="https://ztotta.github.io/tone-quiz/" target='_blank' className='nav'>live site</a>
+						<a href="https://github.com/ztotta/tone-quiz" target='_blank' className='nav'>repository</a>
+					</div>
 
 					<BottomNavExplore prev='loops-with-friends' next='8-bit-beatdown' />	
 				</FlexContainerCol>

@@ -37,6 +37,14 @@ const styles = {
 		marginTop: '-5px',
 		textAlign: 'center',
 	},
+	nav: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		margin: 'auto',
+		marginTop: '20px',
+		marginBottom: '20px',
+	},
 }
 
 class Loops extends Component {
@@ -111,6 +119,11 @@ class Loops extends Component {
 					<ProjectImg source={loopCode} alt='loop-code' />
 
 					<HorizontalLine />
+					
+					<div style={styles.nav}>
+						<a href="http://l00ps-with-fri3nds.herokuapp.com/#/" target='_blank' className='nav'>live site</a>
+						<a href="https://github.com/ztotta/loops-with-friends" target='_blank' className='nav'>repository</a>
+					</div>
 
 					<BottomNavExplore prev='gif-ing' next='tone-quiz' />	
 				</FlexContainerCol>

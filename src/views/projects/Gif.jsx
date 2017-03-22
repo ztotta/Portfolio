@@ -99,6 +99,11 @@ class Gif extends Component {
 					<ProjectImg source={gifCode} alt='create-loops' />
 
 					<HorizontalLine />
+					
+					<div style={styles.nav}>
+						<a href="http://pacific-river-56706.herokuapp.com/" target='_blank' className='nav'>live site</a>
+						<a href="https://github.com/ztotta/the-gif-that-keeps-on-gifing" target='_blank' className='nav'>repository</a>
+					</div>
 
 					<div style={styles.nav}>
 						<Link to='8-bit-beatdown' className='nav'>previous</Link>

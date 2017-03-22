@@ -41,6 +41,14 @@ const styles = {
 		maxWidth: '600px',
 		margin: 'auto',
 	},
+	nav: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		margin: 'auto',
+		marginTop: '20px',
+		marginBottom: '20px',
+	},
 }
 
 class EightBit extends Component {
@@ -67,12 +75,24 @@ class EightBit extends Component {
 					<ProjectSubHeadline subHeadline='JavaScript | CSS | HTML' />
 
 					<HorizontalLine />
-
+					
+					<ProjectText text='A browser game employing JavaScript, jQuery, HTML5 + Canvas, CSS, Web Audio API, Wad.JS, and Logic Pro X for audio production & sound FX.' />
+					
+					<HorizontalLine />
+					
+					<ProjectText text="8_Bit_Beatdown is an electronic drum-off between the user and an old computer that thinks it has rhythm. The computer lays down an 'objectively calculated' 'beat to end all beats' that it challenges the user to recreate with their 'limited human processing power', wagering its hardcopy of The Oregon Trail as bait.
+							When the user succeeds, the computer hands over its hardcopy of The Oregon Trail in a moment of defeat so palpably painful that our entire understanding of AI sentience and emotion comes into question.
+							Do you have what it takes to put this outdated machine back in the storage basement for the good of humanity?
+							Someone's gotta do it..." />
+				
+					<HorizontalLine />
+					
 					<img style={styles.img} src={EightBitGif} alt='pic' />
 
 					<HorizontalLine />
 
-					<ProjectText text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eveniet pariatur in doloribus id blanditiis magni inventore? Eum quia quae itaque quod ullam! Aspernatur excepturi veritatis cum, harum ipsa perferendis?' />
+					<ProjectText text="The biggest challenge here was getting the loops to trigger only the user-selected notes and for them to actually play in tempo. This was
+							achieved with for loops and setTimeouts that incremented by 1/16th note's time on each iteration." />	
 
 					<HorizontalLine />
 
@@ -80,10 +100,11 @@ class EightBit extends Component {
 
 					<HorizontalLine />
 
-					<ProjectText text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eveniet pariatur in doloribus id blanditiis magni inventore? Eum quia quae itaque quod ullam! Aspernatur excepturi veritatis cum, harum ipsa perferendis?' />
-
-					<HorizontalLine />
-
+					<div style={styles.nav}>
+						<a href="https://ztotta.github.io/8bitbeatdown/" target='_blank' className='nav'>live site</a>
+						<a href="https://github.com/ztotta/8bitbeatdown" target='_blank' className='nav'>repository</a>
+					</div>
+					
 					<BottomNavExplore prev='tone-quiz' next='gif-ing' />	
 				</FlexContainerCol>
 			</div>
