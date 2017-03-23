@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
-//import ReactDOM from 'react-dom';
+import { Link } from 'react-router';
 
 import station from '../../../public/loops/station.png';
 import createStation from '../../../public/loops/create-station.png';
@@ -41,9 +41,25 @@ const styles = {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		margin: 'auto',
-		marginTop: '20px',
-		marginBottom: '20px',
+		margin: '20px auto 0 auto',
+	},
+	consult: {
+		margin: '0px',
+    border: 'none',
+    border: '1px solid black',
+    padding: '10px',
+    fontSize: 'large',
+    cursor: 'pointer',
+		background: 'white',
+	},
+	linkBtn: {
+		margin: '0px 10px',
+    border: 'none',
+    border: '1px solid black',
+    padding: '10px',
+    fontSize: 'medium',
+    cursor: 'pointer',
+		background: 'white',
 	},
 }
 
@@ -77,12 +93,17 @@ class Loops extends Component {
 
 					<ProjectSubSubHeadline subSubHeadline='WebSockets | JWTs | HTML5/CSS3 | Web Audio DAW' />
 
+					<div style={styles.nav}>
+						<a href="http://l00ps-with-fri3nds.herokuapp.com/#/" target='_blank' className=''><button className='buttonz' style={styles.linkBtn}>live site</button></a>
+						<a href="https://github.com/ztotta/loops-with-friends" target='_blank' className=''><button className='buttonz' style={styles.linkBtn}>repository</button></a>
+					</div>
+					
 					<HorizontalLine />
 
 					<ProjectText text='This is a single-page, real-time, MEAN-stack app built with MongoDB, AngularJS / UI-Router, Node.js + Express, JavaScript, 
 						 					 Socket.io, JSON Webtoken Authentication, Materialize, HTML, & CSS. The sounds are synthesized with basic waveforms via the 
-											 Web Audio API, made simpler by the Web Audio DAW library.' />
-						
+											 Web Audio API, made simpler by the Web Audio DAW library.' />	
+					
 					<HorizontalLine />
 					
 					<ProjectText text='Users build loop-based beats with 6 instruments, 384 launch-pads, and as many friends as they care to invite.
@@ -120,11 +141,12 @@ class Loops extends Component {
 
 					<HorizontalLine />
 					
-					<div style={styles.nav}>
-						<a href="http://l00ps-with-fri3nds.herokuapp.com/#/" target='_blank' className='nav'>live site</a>
-						<a href="https://github.com/ztotta/loops-with-friends" target='_blank' className='nav'>repository</a>
-					</div>
-
+					<Link to='contact'>
+						<button className='buttonz' style={styles.consult}>
+							free quote and consultation
+						</button>
+					</Link>
+				
 					<BottomNavExplore prev='gif-ing' next='tone-quiz' />	
 				</FlexContainerCol>
 			</div>

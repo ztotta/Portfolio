@@ -4,6 +4,8 @@ import $ from 'jquery';
 //import particlesJS from 'particles.js';
 import Particles from 'react-particles-js';
 
+import profilePic from '../../public/profile2.png';
+
 import BottomNav from '../components/BottomNav.jsx';
 import WelcomeHeadline from '../components/WelcomeHeadline.jsx';
 
@@ -30,7 +32,7 @@ const styles = {
 		borderRadius: '50%',
 		height: '0px',
 		width: '0px',
-		margin: 'auto',
+		margin: '0px auto',
 	},
 	link: {
 		textDecoration: 'none',
@@ -38,14 +40,24 @@ const styles = {
 	services: {
 		letterSpacing: '0.8px',
 		maxWidth: '600px',
-		margin: '0px',
+		margin: '0px auto',
 	},
 	light: {
 		opacity: '0.5',
 	},
 	intro: {
-		maxWidth: '600px',
+//		maxWidth: '600px',
 		margin: '0px',
+	},
+	consult: {
+		margin: '0px',
+    border: 'none',
+    border: '1px solid black',
+    padding: '10px',
+    fontSize: 'large',
+    cursor: 'pointer',
+		background: 'white',
+		borderRadius: '10px 10px 0 0',
 	},
 }
 
@@ -65,12 +77,10 @@ class Welcome extends Component {
 		///////////////////////////////////////
 		// Profile Image Circle Animations: ///
 		///////////////////////////////////////
-		const $kanvas = $('canvas').first()
-		
 		if (window.innerWidth > 499) {        // assign height depending on MediaQuery:
-			$kanvas.css({height: '300px', width: '300px', margin: 'auto'});
+			$('.profile-img').css({height: '300px', width: '300px', margin: 'auto'});
 		} else {
-			$kanvas.css({height: '200px', width: '200px', margin: 'auto'});
+			$('.profile-img').css({height: '200px', width: '200px', margin: 'auto'});
 		}
 		///////////////////////////////////////
 		
@@ -93,83 +103,34 @@ class Welcome extends Component {
 							</tr>
 							<tr>
 								<td>
-									<Link style={styles.link} to='skills'>
-										<p style={styles.services} id='services'>sites <span style={styles.light}>|</span> apps <span style={styles.light}>|</span> prototyping</p>
+									<img className='profile-img' style={styles.img} src={profilePic} />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p style={styles.intro}>Why hello! My name is Zach Totta and I’m a San Francisco-based developer. 
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p style={styles.intro}>I build custom, modern websites & apps to help you get your business online <em>painlessly</em>.
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p style={styles.intro}>There's no need to waste your time or overpay.
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<Link to='contact'>
+										<button className='buttonz' style={styles.consult}>
+											get a free quote and consultation
+										</button>
 									</Link>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<Link to='projects'>
-										<Particles 
-											params={{
-												particles: {
-													line_linked: {
-														shadow: {
-															enable: true,
-															color: 'black',
-															blur: 1
-														}
-													},
-													number: {
-														value: this.state.numParticles
-													},
-													shape: {
-														polygon: {
-															nb_sides: 6
-														}
-													},	
-													move: {
-														enable: true,
-														speed: 3,
-														direction: "none",
-														random: false,
-														straight: false,
-														out_mode: "bounce",
-														bounce: false,
-														attract: {
-															enable: true,
-															rotateX: 600,
-															rotateY: 1200
-														}
-													},
-													interactivity: {
-														detect_on: "window",
-														events: {
-															onhover: {
-																enable: true,
-																mode: "repulse"
-															},
-															onclick: {
-																enable: false,
-																mode: "push"
-															},
-															resize: true
-														},
-													},
-													retina_detect: 'true',	
-												}}} 
-										/>
-									</Link>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p style={styles.intro}>Why hello! My name is Zach Totta and I’m a San Francisco-based freelancer. 
-									</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p style={styles.intro}>I build custom, modern websites & apps with the most up-to-date techniques and technologies available.  
-									</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p style={styles.intro}>
-										Please, come in. Stay a while. 
-									</p>
 								</td>
 							</tr>
 						</tbody>

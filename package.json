@@ -15,6 +15,7 @@
     "radium-grid": "^2.0.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-html-email": "^1.2.0",
     "react-motion": "^0.4.7",
     "react-particles-js": "^1.5.0",
     "react-responsive": "^1.2.6",

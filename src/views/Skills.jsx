@@ -20,6 +20,14 @@ const styles = {
 		borderCollapse: 'collapse',
 		marginTop: '20px',
 	},
+	btnContainer: {
+		opacity: '1',
+		textAlign: 'left',
+		width: '90%',
+		maxWidth: '900px',
+		borderCollapse: 'collapse',
+		margin: '20px 0',
+	},
 	header: {
 		fontSize: '2em',
 		marginBottom: '30px',
@@ -54,6 +62,16 @@ const styles = {
 		verticalAlign: 'top',
 		border: '15px solid white',
 	},
+	consult: {
+		margin: '0px',
+    border: 'none',
+    border: '1px solid black',
+    padding: '10px',
+    fontSize: 'large',
+    cursor: 'pointer',
+		background: 'white',
+		borderRadius: '10px 10px 0 0',
+	},
 }
 
 class Skills extends Component {
@@ -71,14 +89,14 @@ class Skills extends Component {
 						</tr>	
 						<tr className='skill-2-5' style={styles.tr}>
 							<td>
-								I use JavaScript + CSS + HTML & the most current frameworks available to deliver the experiences 
+								I use the most current technologies available to deliver the experiences 
 								that today's users have come to expect.
 							</td>
 						</tr>	
 						<tr className='skill-2-6' style={styles.tr}>
 							<td>
-								I use Drupal as a Content Management System so that you can easily update and tweak 
-								your site's content without relying on me or any other developer to do it for you.
+								I use WordPress as a Content Management System so that you can easily update and tweak 
+								your site's content without relying on me or any other developer to help you out in the future.
 							</td>
 						</tr>
 				</tbody>,
@@ -91,8 +109,13 @@ class Skills extends Component {
 	componentDidMount() {
 		$('#skills-header').css({"animation":"fall 1s"});
 		$('.skills-subHeader').css({"animation":"slide-fade 1.25s"});
+		$('.buttonz').css({"animation":"slide-fade 1.5s"});
 		$('#skill-nav').css({"animation":"rise 1.5s"});
 		this.animateContent();
+		
+		if (window.innerWidth < 499) {        // assign height depending on MediaQuery:
+			$('.buttonz-td').css({textAlign: 'center'});
+		}
 	}
 	
 	animateContent() {
@@ -116,13 +139,13 @@ class Skills extends Component {
 						</tr>	
 						<tr className='skill-2-5' style={styles.tr}>
 							<td>
-								I use JavaScript + CSS + HTML & the most current frameworks available to deliver the experiences 
+								I use the most current technologies available to deliver the experiences 
 								that today's users have come to expect.
 							</td>
 						</tr>	
 						<tr className='skill-2-6' style={styles.tr}>
 							<td>
-								I use Drupal as a Content Management System so that you can easily update and tweak 
+								I use WordPress as a Content Management System so that you can easily update and tweak 
 								your site's content without relying on me or any other developer to help you out in the future.
 							</td>
 						</tr>
@@ -167,10 +190,21 @@ class Skills extends Component {
 						<tr className='skill-2' style={styles.tr}>
 							<td>
 								I work for <em>you</em>, and communication is my highest priority. From the very start, 
-								I work with you to make sure we are on the same page and we never waste each other's time
+								we'll be working together to make sure we are on the same page and we never waste each other's time
 								on false starts or dead ends. 
 							</td>
 						</tr>	
+						<tr className='skill-2' style={styles.tr}>
+							<td>
+								I don't outsource anything.  
+							</td>
+						</tr>	
+						<tr className='skill-2' style={styles.tr}>
+							<td>
+								I do honest work, plain and simple. Everything is built from scratch to make your product unique
+								and memorable. 
+							</td>
+						</tr>
 					</tbody>,
 				showSites: false,
 				showApps: false,
@@ -192,7 +226,7 @@ class Skills extends Component {
 		
     return (
 			<div id='skills-wrapper' style={styles.wrapper}>
-				<div id='skills-header' style={styles.header}>skills</div>
+				<div id='skills-header' style={styles.header}>services</div>
 				<div className='skills-subHeader' style={styles.subHeaderBar}>
 					<span className={sitesClasses.join(' ')}
 								style={styles.subHeader}
@@ -214,10 +248,24 @@ class Skills extends Component {
 				<table id='skills-container' style={styles.container}>
 						{this.state.content}
 				</table>
+					
+				<table style={styles.btnContainer}>
+					<tbody>
+						<tr>
+								<td className='buttonz-td'>
+									<Link to='contact'>
+										<button className='buttonz' style={styles.consult}>
+												free quote and consultation
+										</button>
+									</Link>
+								</td>
+							</tr>
+					</tbody>
+				</table>
 				
 				<div id='skill-nav' style={styles.navbar}>
 					<Link to='/' className='nav'>home</Link>
-					<Link to='projects' className='nav'>projects</Link>
+					<Link to='projects' className='nav'>work</Link>
 					<Link to='about' className='nav'>about</Link>
 					<Link to='contact' className='nav'>contact</Link>
 				</div>

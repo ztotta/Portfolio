@@ -96,12 +96,12 @@ class Projects extends Component {
 
 					<div id='gallery-navbar' style={styles.navbar}>
 						<Link to='/' className='nav'>home</Link>
-						<Link to='skills' className='nav'>skills</Link>
+						<Link to='skills' className='nav'>services</Link>
 						<Link to='about' className='nav'>about</Link>
 						<Link to='contact' className='nav'>contact</Link>
 					</div>
 					
-					<ProjectHeadline headline='_projects' />
+					<ProjectHeadline headline='_work' />
 				</div>
 			</HorizontalScroll>
     );
