@@ -50,6 +50,21 @@ const styles = {
 		marginTop: '20px',
 		marginBottom: '20px',
 	},
+	links: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		margin: '20px auto 0 auto',
+	},
+	linkBtn: {
+		margin: '0px 10px',
+    border: 'none',
+    border: '1px solid black',
+    padding: '10px',
+    fontSize: 'medium',
+    cursor: 'pointer',
+		background: 'white',
+	},
 }
 
 class Gif extends Component {
@@ -73,6 +88,11 @@ class Gif extends Component {
 
 					<ProjectSubHeadline subHeadline='JavaScript | CSS | HTML' />
 
+					<div style={styles.links}>
+						<a href="http://pacific-river-56706.herokuapp.com/" target='_blank' className=''><button className='buttonz' style={styles.linkBtn}>live site</button></a>
+						<a href="https://github.com/ztotta/the-gif-that-keeps-on-gifing" target='_blank' className=''><button className='buttonz' style={styles.linkBtn}>repository</button></a>
+					</div>
+				
 					<HorizontalLine />
 
 					<ProjectText text='A team-built full-stack app using MongoDB, Node.js + Express, JavaScript, jQuery / AJAX, Google OAuth 2.0, Materialize, HTML, CSS and the Giphy API. Deployed via Heroku.' />
@@ -99,16 +119,11 @@ class Gif extends Component {
 					<ProjectImg source={gifCode} alt='create-loops' />
 
 					<HorizontalLine />
-					
-					<div style={styles.nav}>
-						<a href="http://pacific-river-56706.herokuapp.com/" target='_blank' className='nav'>live site</a>
-						<a href="https://github.com/ztotta/the-gif-that-keeps-on-gifing" target='_blank' className='nav'>repository</a>
-					</div>
 
 					<div style={styles.nav}>
 						<Link to='8-bit-beatdown' className='nav'>previous</Link>
 						<Link to='/' className='nav'>home</Link>
-						<Link to='skills' className='nav'>skills</Link>
+						<Link to='skills' className='nav'>services</Link>
 						<Link to='contact' className='nav'>contact</Link>
 					</div>
 				</FlexContainerCol>

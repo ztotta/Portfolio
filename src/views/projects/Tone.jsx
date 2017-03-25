@@ -49,6 +49,21 @@ const styles = {
 		marginTop: '20px',
 		marginBottom: '20px',
 	},
+	links: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		margin: '20px auto 0 auto',
+	},
+	linkBtn: {
+		margin: '0px 10px',
+    border: 'none',
+    border: '1px solid black',
+    padding: '10px',
+    fontSize: 'medium',
+    cursor: 'pointer',
+		background: 'white',
+	},
 }
 
 class Tone extends Component {
@@ -84,6 +99,11 @@ class Tone extends Component {
 
 					<ProjectSubHeadline subHeadline='React | React-Motion | Node' />
 
+					<div style={styles.links}>
+						<a href="https://ztotta.github.io/tone-quiz/" target='_blank' className=''><button className='buttonz' style={styles.linkBtn}>live site</button></a>
+						<a href="https://github.com/ztotta/tone-quiz" target='_blank' className=''><button className='buttonz' style={styles.linkBtn}>repository</button></a>
+					</div>
+					
 					<HorizontalLine />
 
 					<ProjectText text='This is a single-page React App that lets users test their pitch recognition in a short quiz and then receive their results.' />
@@ -110,10 +130,6 @@ class Tone extends Component {
 
 					<HorizontalLine />
 					
-					<div style={styles.nav}>
-						<a href="https://ztotta.github.io/tone-quiz/" target='_blank' className='nav'>live site</a>
-						<a href="https://github.com/ztotta/tone-quiz" target='_blank' className='nav'>repository</a>
-					</div>
 
 					<BottomNavExplore prev='loops-with-friends' next='8-bit-beatdown' />	
 				</FlexContainerCol>

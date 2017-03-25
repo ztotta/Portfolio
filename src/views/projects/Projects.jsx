@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import $ from 'jquery';
 import HorizontalScroll from 'react-scroll-horizontal';
 
-import station from '../../../public/loops/station.png';
+import station from '../../../public/loops/loop.gif';
 import tone from '../../../public/tone/toneQuiz.gif';
 import EightBitGif from '../../../public/8_bit/8bit.gif';
 import gif from '../../../public/gif/gif.gif';
@@ -97,7 +97,6 @@ class Projects extends Component {
 					<div id='gallery-navbar' style={styles.navbar}>
 						<Link to='/' className='nav'>home</Link>
 						<Link to='skills' className='nav'>services</Link>
-						<Link to='about' className='nav'>about</Link>
 						<Link to='contact' className='nav'>contact</Link>
 					</div>
 					

@@ -16,10 +16,10 @@ class ContainerMain extends Component {
 	
 		let items = [
 			<Link to='/'><SidebarItem className='sidebarItem'>home</SidebarItem></Link>,
-			<Link to='/skills'><SidebarItem className='sidebarItem'>skills</SidebarItem></Link>,
-			<Link to='/projects'><SidebarItem className='sidebarItem'>projects</SidebarItem></Link>,
+			<Link to='/skills'><SidebarItem className='sidebarItem'>services</SidebarItem></Link>,
+			<Link to='/projects'><SidebarItem className='sidebarItem'>work</SidebarItem></Link>,
 //			<Link to='/testimonials'><SidebarItem className='sidebarItem'>testimonials</SidebarItem></Link>,
-			<Link to='/about'><SidebarItem className='sidebarItem'>about</SidebarItem></Link>,
+//			<Link to='/about'><SidebarItem className='sidebarItem'>about</SidebarItem></Link>,
 			<Link to='/contact'><SidebarItem className='sidebarItem'>contact</SidebarItem></Link>,
 		];
 		

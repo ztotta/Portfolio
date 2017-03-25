@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
 
-import station from '../../../public/loops/station.png';
+import station from '../../../public/loops/loop.gif';
 import createStation from '../../../public/loops/create-station.png';
 import loopCode from '../../../public/loops/loop-code.png';
 
@@ -61,6 +61,12 @@ const styles = {
     cursor: 'pointer',
 		background: 'white',
 	},
+	img: {
+		width: '100%',
+		minWidth: '300px',
+		maxWidth: '600px',
+		margin: 'auto',
+	},
 }
 
 class Loops extends Component {
@@ -115,7 +121,7 @@ class Loops extends Component {
 					
 					<HorizontalLine />					 											 						 
 											 											 
-					<ProjectImg source={station} alt='station' />
+					<img style={styles.img} src={station} alt='station' />
 					
 					<HorizontalLine />
 
@@ -141,11 +147,11 @@ class Loops extends Component {
 
 					<HorizontalLine />
 					
-					<Link to='contact'>
+					{/*<Link to='contact'>
 						<button className='buttonz' style={styles.consult}>
 							free quote and consultation
 						</button>
-					</Link>
+					</Link>*/}
 				
 					<BottomNavExplore prev='gif-ing' next='tone-quiz' />	
 				</FlexContainerCol>

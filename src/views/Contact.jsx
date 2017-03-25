@@ -74,7 +74,6 @@ class Contact extends Component {
 					<Link to='/' className='nav'>home</Link>
 					<Link to='skills' className='nav'>services</Link>
 					<Link to='projects' className='nav'>work</Link>
-					<Link to='about' className='nav'>about</Link>
 				</div>
 				<img className='moon' style={styles.img} src={snowRiver} />
 			</div>

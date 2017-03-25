@@ -16,7 +16,6 @@ class BottomNav extends Component {
 			<div style={styles.navbar}>
 				<Link to='skills' className='nav'>services</Link>
 				<Link to='projects' className='nav'>work</Link>
-				<Link to='about' className='nav'>about</Link>
 				<Link to='contact' className='nav'>contact</Link>
 			</div>	
     );

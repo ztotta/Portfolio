@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import { Link } from 'react-router';
 import $ from 'jquery';
 
@@ -75,6 +75,10 @@ const styles = {
 }
 
 class Skills extends Component {
+	static contextTypes = {
+		router: PropTypes.object
+	}
+	
 	constructor(props) {
 		super(props);
 		
@@ -215,6 +219,12 @@ class Skills extends Component {
 		}	
 	}
 	
+	toContact() {
+		this.mailTo.click();
+		
+		this.context.router.push(`/contact`);							
+	}
+	
   render() {
 		let sitesClasses         = ['skills-subHeader'];
 		let appsClasses          = ['skills-subHeader'];
@@ -253,11 +263,10 @@ class Skills extends Component {
 					<tbody>
 						<tr>
 								<td className='buttonz-td'>
-									<Link to='contact'>
-										<button className='buttonz' style={styles.consult}>
-												free quote and consultation
-										</button>
-									</Link>
+									<a ref={mailTo => this.mailTo = mailTo} className='mailTo' href="mailto:ztotta@gmail.com?Subject=Development%20Consultation"></a>
+									<button onClick={this.toContact.bind(this)} className='buttonz' style={styles.consult}>
+											free quote and consultation
+									</button>
 								</td>
 							</tr>
 					</tbody>
@@ -266,7 +275,6 @@ class Skills extends Component {
 				<div id='skill-nav' style={styles.navbar}>
 					<Link to='/' className='nav'>home</Link>
 					<Link to='projects' className='nav'>work</Link>
-					<Link to='about' className='nav'>about</Link>
 					<Link to='contact' className='nav'>contact</Link>
 				</div>
 			</div>

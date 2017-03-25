@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import { Link } from 'react-router';
 import $ from 'jquery';
 //import particlesJS from 'particles.js';
@@ -65,6 +65,10 @@ const styles = {
 // <img id='profile-img' style={styles.img} src={profile} alt="profile-pic"/>
 
 class Welcome extends Component {
+	static contextTypes = {
+		router: PropTypes.object
+	}
+	
 	constructor(props) {
 		super(props);
 		this.state = {numParticles: 50}
@@ -88,6 +92,12 @@ class Welcome extends Component {
 		$('#welcome-table').css({height: (window.innerHeight - 58) + 'px'});    // bottom nav size + margins = 58px	
 		
 		if (window.innerWidth > 499) this.setState({numParticles: 10});
+	}
+
+	toContact() {		
+		this.mailTo.click();
+		
+		this.context.router.push(`/contact`);							
 	}
 	
   render() {
@@ -126,11 +136,10 @@ class Welcome extends Component {
 							</tr>
 							<tr>
 								<td>
-									<Link to='contact'>
-										<button className='buttonz' style={styles.consult}>
-											get a free quote and consultation
-										</button>
-									</Link>
+									<a ref={mailTo => this.mailTo = mailTo} className='mailTo' href="mailto:ztotta@gmail.com?Subject=Development%20Consultation"></a>
+									<button className='buttonz' style={styles.consult} onClick={this.toContact.bind(this)}>
+										get a free quote and consultation
+									</button>
 								</td>
 							</tr>
 						</tbody>
