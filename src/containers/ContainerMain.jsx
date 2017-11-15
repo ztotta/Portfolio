@@ -25,16 +25,16 @@ class ContainerMain extends Component {
 		
     return (
 			<div>
-				<Sidebar content={items} 
+				{/*<Sidebar content={items} 
 						background={'#e0f7fa'} 
 						breakPoint={2000}
 						toggleIconColor={'black'}
 						width={200}
 				>
+  			</Sidebar> */}
 					<ContainerApp>
 						{this.props.children}
 					</ContainerApp>
-  			</Sidebar>
 			</div>
     );
   }

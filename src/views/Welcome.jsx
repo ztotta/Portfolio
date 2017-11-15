@@ -4,7 +4,7 @@ import $ from 'jquery';
 //import particlesJS from 'particles.js';
 import Particles from 'react-particles-js';
 
-import profilePic from '../../public/profile2.png';
+import profilePic from '../../public/gh_profile.jpeg';
 
 import BottomNav from '../components/BottomNav.jsx';
 import WelcomeHeadline from '../components/WelcomeHeadline.jsx';
@@ -59,6 +59,11 @@ const styles = {
 		background: 'white',
 		borderRadius: '10px 10px 0 0',
 	},
+	linkContainer: {
+		// textAlign: 'center'
+		display: 'flex',
+		justifyContent: 'center'
+	}
 }
 
 // Profile Img
@@ -109,7 +114,7 @@ class Welcome extends Component {
 					<table id='welcome-table' style={styles.table}>
 						<tbody>
 							<tr>
-								<WelcomeHeadline headline='_zachTotta' />
+								<WelcomeHeadline headline='zach totta' />
 							</tr>
 							<tr>
 								<td>
@@ -118,33 +123,36 @@ class Welcome extends Component {
 							</tr>
 							<tr>
 								<td>
-									<p style={styles.intro}>Why hello! My name is Zach Totta and I’m a San Francisco-based developer. 
-									</p>
+									<p style={styles.intro}>software engineer</p>
+									<p style={styles.intro}>- - - - - - - - - - -</p>
+									<p style={styles.intro}>ripple labs</p>
 								</td>
 							</tr>
-							<tr>
+							<tr style={styles.linkContainer}>
 								<td>
-									<p style={styles.intro}>I build custom, modern websites & apps to help you get your business online <em>painlessly</em>.
-									</p>
+									<Link className='mailTo' href="https://github.com/ztotta">
+										<button className='buttonz' style={styles.consult}>
+											github
+										</button>
+									</Link>
 								</td>
-							</tr>
-							<tr>
 								<td>
-									<p style={styles.intro}>There's no need to waste your time or overpay.
-									</p>
+									<Link className='mailTo' href="https://linkedin.com/in/ztotta">
+										<button className='buttonz' style={styles.consult}>
+											linked in 
+										</button>
+									</Link>
 								</td>
-							</tr>
-							<tr>
 								<td>
-									<a ref={mailTo => this.mailTo = mailTo} className='mailTo' href="mailto:ztotta@gmail.com?Subject=Development%20Consultation"></a>
-									<button className='buttonz' style={styles.consult} onClick={this.toContact.bind(this)}>
-										get a free quote and consultation
-									</button>
+									<Link className='mailTo' href="">
+										<button className='buttonz' style={styles.consult}>
+											email
+										</button>
+									</Link>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<BottomNav />
 				</div>
 
     );
