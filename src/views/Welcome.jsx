@@ -144,7 +144,7 @@ class Welcome extends Component {
 									</Link>
 								</td>
 								<td>
-									<Link className='mailTo' href="">
+									<Link ref={mailTo => this.mailTo = mailTo} className='mailTo' href="mailto:ztotta@gmail.com">
 										<button className='buttonz' style={styles.consult}>
 											email
 										</button>
